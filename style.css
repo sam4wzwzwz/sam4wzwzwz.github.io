@@ -1,0 +1,41 @@
+h1 {
+    text-align: center;
+  
+    color: #C3DA5D;
+    font-size: 400%;
+}
+main {
+  text-align: center;
+  color:#C3DA5D ;
+}
+body {
+  background-color: #000402;
+  font-family: 'VT323', monospace;
+}
+h2 {
+
+  
+  text-align: center;
+}
+h5 {
+  text-align: left;
+  padding-left: 100px;
+}
+p {font-size: 160%;}
+h3 {
+  font-size: 300%;
+  padding-top: 00px;
+
+}
+a {color: #7E9E44;
+  text-decoration: none;}
+a:hover {
+  color: #C6AB59;
+}
+h4 {font-size: 400%;}
+h6 {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  font-size: 400%;
+  padding-top: 100px;
+}

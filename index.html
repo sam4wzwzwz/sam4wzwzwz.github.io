@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css" />
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <title>
+        shitshow
+    </title>
+
+<body>
+    <audio id="bg-audio" src="https://files.catbox.moe/qvdt58.mp3" autoplay loop controls hidden></audio>
+    
+    <main>
+        <h1>Sam's dungeon</h1>
+        <h2>Property of Mr Samuel do NOT fucking steal my website or else. I defo did not use ai for this check the
+            html. Haha doesnt seem like chat gpt made it huh cuz the html is a sloppy mess.
+            <h5>fine print: ok... maybe i used a little bit of chat gpt but only a little bit LOL</h5>
+        </h2>
+        <h4>THE SAM OS</h4>
+        <H3> <a href="openfile.html">[ OPEN FILE ]</a><br><br>
+            <a href="openfile.html">[ OPEN FILE ]</a><br><br>
+            <a href="openfile.html">[ OPEN FILE ]</a>
+
+        </H3>
+        <div>
+            <h6><a href="#" id="vol-up">[VOL UP]</a>
+            <a href="#" id="vol-down">[VOL DOWN]</a>
+            <a href="#" id="vol-MUTE">[MUTE]</a></h6>
+        </div>
+
+    <script>
+        const audio = document.getElementById('bg-audio');
+        audio.volume = 0.1; // start quiet
+
+        document.getElementById('vol-up').addEventListener('click', e => {
+            e.preventDefault();
+            if (audio.volume < 1) {
+                audio.volume = Math.min(1, audio.volume + 0.1);
+            }
+            audio.muted = false;
+            console.log('Volume:', audio.volume.toFixed(1));
+        });
+
+        document.getElementById('vol-down').addEventListener('click', e => {
+            e.preventDefault();
+            if (audio.volume > 0) {
+                audio.volume = Math.max(0, audio.volume - 0.1);
+            }
+            if (audio.volume === 0) audio.muted = true;
+            console.log('Volume:', audio.volume.toFixed(1));
+        });
+
+        // Note: your HTML uses id="vol-MUTE", so using that here:
+        document.getElementById('vol-MUTE').addEventListener('click', e => {
+            e.preventDefault();
+            audio.muted = !audio.muted;
+            e.target.textContent = audio.muted ? '[ UNMUTE ]' : '[ MUTE ]';
+            console.log('Muted:', audio.muted);
+        });
+    </script>
+</body>
+</head>
+
+</html>
