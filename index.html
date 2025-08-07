@@ -21,21 +21,34 @@
             html. Haha doesnt seem like chat gpt made it huh cuz the html is a sloppy mess.
             <h5>fine print: ok... maybe i used a little bit of chat gpt but only a little bit LOL</h5>
         </h2>
-        <h4>THE SAM OS</h4>
+        <h4>:THE SAM OS:</h4>
         <H3> <a href="openfile.html">[ OPEN FILE ]</a><br><br>
             <a href="openfile.html">[ OPEN FILE ]</a><br><br>
             <a href="openfile.html">[ OPEN FILE ]</a>
 
         </H3>
         <div>
-            <h6><a href="#" id="vol-up">[VOL UP]</a>
+            <h6>
+            <a href="#" id="play-audio">[PLAY]</a>
+            <a href="#" id="vol-up">[VOL UP]</a>
             <a href="#" id="vol-down">[VOL DOWN]</a>
-            <a href="#" id="vol-MUTE">[MUTE]</a></h6>
+            <a href="#" id="vol-MUTE">[MUTE]</a>
+            </h6>
         </div>
 
     <script>
         const audio = document.getElementById('bg-audio');
         audio.volume = 0.1; // start quiet
+
+        // NEW: Play button
+        document.getElementById('play-audio').addEventListener('click', e => {
+            e.preventDefault();
+            audio.play().then(() => {
+                console.log('Audio playing');
+            }).catch(err => {
+                console.log('Play error:', err);
+            });
+        });
 
         document.getElementById('vol-up').addEventListener('click', e => {
             e.preventDefault();
@@ -55,7 +68,6 @@
             console.log('Volume:', audio.volume.toFixed(1));
         });
 
-        // Note: your HTML uses id="vol-MUTE", so using that here:
         document.getElementById('vol-MUTE').addEventListener('click', e => {
             e.preventDefault();
             audio.muted = !audio.muted;
@@ -67,4 +79,3 @@
 </head>
 
 </html>
-
